@@ -1,0 +1,558 @@
+@import './reset';
+
+// text colors
+$txt-white: #fff;
+$txt-black: #000;
+$txt-deep-orange-500: #ff6336;
+// background colors
+$bg-white: #fff;
+$bg-black: #000;
+$bg-deep-orange-500: #ff6336;
+$bg-deep-orange-300: #ff9c7d;
+$bg-amber-50: #fff8e4;
+$bg-amber-300: #dabc98;
+$bg-light-blue-100: #c9e8f2;
+
+// border styles
+$border-black: 1px solid rgba(0, 0, 0, 0.5);
+$border-deep-orange: 1px solid #ff6336;
+// container styles
+$container-width: 1290px;
+$container-space: 25px;
+
+:root {
+	--txt-white: #fff;
+	--txt-black: #000;
+	--flex: flex;
+	--flex-col: column;
+	--justify-center: center;
+	--justify-between: space-between;
+	--items-center: center;
+}
+// function pixel to rem
+@function toRem($value) {
+	$remValue: ($value / 16) + rem;
+	@return $remValue;
+}
+
+@mixin font-face($name, $font-type, $path, $weight: normal, $style: normal) {
+	$ttf: 'ttf';
+
+	$font-path: $path + '/' + $font-type;
+	@font-face {
+		font-family: $name;
+		src: url($font-path + '.' + $ttf) format ('truetype');
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+	}
+}
+
+$graphicalFontName: 'Graphik LCG';
+$graphicRegular: 'Graphik LCG-Regular';
+$graphicSemibold: 'Graphik LCG-Semibold';
+$path: '../assets/fonts/GraphikLCG';
+
+@include font-face($graphicalFontName, $graphicRegular, $path);
+@include font-face($graphicalFontName, $graphicRegular, $path, 600);
+
+@mixin custom-button(
+	$bg-color,
+	$text-color,
+	$border,
+	$font-size,
+	$line-height,
+	$padding
+) {
+	@include font-face($graphicalFontName, $graphicRegular, $path);
+	@include font-face($graphicalFontName, $graphicRegular, $path, 600);
+
+	display: var(--flex);
+	justify-content: var(--justify-center);
+	align-items: var(--items-center);
+	font-family: $graphicalFontName, sans-serif;
+	font-size: $font-size;
+	font-style: normal;
+	font-weight: 600;
+	line-height: $line-height;
+	border-radius: 0;
+	color: $text-color;
+	background-color: $bg-color;
+	border: $border;
+	padding: $padding;
+}
+
+.btn-white {
+	@include custom-button(
+		$bg-white,
+		$txt-black,
+		$border-black,
+		16px,
+		45px,
+		1px 35px
+	);
+	&:hover {
+		background-color: $bg-deep-orange-500;
+		color: $bg-white;
+		transition: 0.3s ease;
+	}
+}
+
+.btn-orange {
+	@include custom-button(
+		$bg-deep-orange-500,
+		$txt-white,
+		none,
+		16px,
+		45px,
+		1px 26px
+	);
+	&:hover {
+		background-color: $bg-white;
+		color: $txt-deep-orange-500;
+		border: $border-deep-orange;
+		transition: 0.3s ease;
+	}
+}
+
+.btn-black {
+	@include custom-button($bg-black, $txt-white, none, 16px, 45px, 1px 26px);
+	&:hover {
+		background-color: $bg-white;
+		color: $txt-black;
+		border: $border-black;
+		transition: 0.3s ease;
+	}
+}
+
+.article-btn-white {
+	@include custom-button(
+		$bg-white,
+		$txt-black,
+		$border-black,
+		16px,
+		45px,
+		1px 29px
+	);
+	&:hover {
+		background-color: $bg-deep-orange-500;
+		color: $bg-white;
+		transition: 0.3s ease;
+	}
+}
+
+.article-btn-orange {
+	@include custom-button(
+		$bg-deep-orange-500,
+		$txt-white,
+		none,
+		16px,
+		45px,
+		1px 44px
+	);
+	&:hover {
+		background-color: $bg-white;
+		color: $bg-deep-orange-500;
+		border: $border-deep-orange;
+		transition: 0.3s ease;
+	}
+}
+// end button styles
+
+// flex styles
+.flex {
+	display: var(--flex);
+}
+
+.page-full {
+	min-height: 100vh;
+	width: 100%;
+}
+
+.container {
+	max-width: calc(#{$container-width} + #{$container-space} * 2);
+	padding: 0 $container-space;
+	margin: 0 auto;
+}
+
+.header__nav {
+	padding-top: toRem(35);
+	padding: toRem(35);
+	border-bottom: $border-black;
+}
+
+.img-logo {
+	margin-right: toRem(51);
+}
+.navbar-nav {
+	.nav-link {
+		color: $txt-black;
+		margin-right: toRem(30);
+	}
+}
+
+.nav-link:hover {
+	color: $txt-deep-orange-500;
+	transition: 0.3s ease;
+}
+
+.main {
+	padding-top: toRem(40);
+}
+
+.block-img {
+	width: 100%;
+}
+
+.article {
+	max-width: toRem(552);
+	&__h1 {
+		color: $txt-black;
+		font-family: $graphicalFontName, sans-serif;
+		font-size: toRem(65);
+		font-weight: 600;
+		line-height: toRem(70);
+		margin-bottom: toRem(40);
+	}
+	&__txt {
+		color: $txt-black;
+		font-family: $graphicalFontName, sans-serif;
+		font-size: toRem(25);
+		line-height: toRem(35);
+		padding-bottom: toRem(40);
+	}
+
+	&__buttons {
+		padding-bottom: toRem(15);
+	}
+}
+.article__txt-second {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(15);
+	font-weight: 400;
+	line-height: toRem(25);
+	padding-bottom: toRem(40);
+}
+
+.section-brands {
+	background-color: $bg-deep-orange-300;
+	padding-top: toRem(98);
+}
+.section-brands__title-h2 {
+	max-width: toRem(720);
+}
+.section-brands__title {
+	color: $txt-black;
+	font-size: toRem(50);
+	font-weight: 600;
+	line-height: toRem(60);
+	margin-bottom: toRem(70);
+}
+
+.section-brands__logos {
+	margin-bottom: toRem(94);
+}
+
+.section-gif__content {
+	max-width: toRem(494);
+	.section-gif__h2 {
+		color: $txt-black;
+		font-family: $graphicalFontName, sans-serif;
+		font-size: toRem(50);
+		font-weight: 600;
+		line-height: toRem(60);
+	}
+	.section-gif__txt {
+		color: $txt-black;
+		font-family: $graphicalFontName, sans-serif;
+		font-size: toRem(20);
+		font-weight: 400;
+		line-height: toRem(30);
+	}
+	.link-black {
+		color: $txt-black;
+		text-decoration: underline;
+	}
+}
+
+.section-gif__link {
+	color: $txt-black;
+	font-size: toRem(20);
+	font-family: $graphicalFontName, sans-serif;
+	font-weight: 600;
+	line-height: toRem(30);
+	&:hover {
+		color: $txt-black;
+		text-decoration: underline;
+	}
+}
+
+.section-gif__deep-orange {
+	background-color: $bg-amber-50;
+	min-height: toRem(577);
+}
+
+.section-gif__white-wrap {
+	background-color: $bg-white;
+	max-width: toRem(500);
+	width: 100%;
+	height: toRem(300);
+}
+
+.section-gif__white {
+	background-color: $bg-white;
+	max-width: toRem(400);
+	width: 100%;
+	height: toRem(226);
+}
+
+.section-gif__txt-wrap {
+	max-width: toRem(463);
+	width: 100%;
+	.txt-php {
+		color: $txt-black;
+		font-family: $graphicalFontName, sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 30px;
+	}
+}
+
+.section-cards {
+	background-color: $bg-amber-50;
+	&__h2 {
+		color: $txt-black;
+		text-align: center;
+		font-family: $graphicalFontName, sans-serif;
+		font-size: 50px;
+		font-weight: 600;
+		line-height: 60px;
+	}
+	&__h4 {
+		color: $txt-black;
+		text-align: center;
+		font-family: $graphicalFontName, sans-serif;
+		font-size: 25px;
+		font-weight: 600;
+		line-height: 35px;
+	}
+	&__txt {
+		color: $txt-black;
+		text-align: center;
+		font-family: $graphicalFontName, sans-serif;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 25px;
+	}
+	&__link {
+		color: $txt-black;
+		font-size: toRem(20);
+		font-family: $graphicalFontName, sans-serif;
+		font-weight: 400;
+		line-height: toRem(25);
+		&:hover {
+			color: $txt-black;
+			text-decoration: underline;
+		}
+	}
+}
+
+.section-cards-2__h2 {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: 50px;
+	font-weight: 600;
+	line-height: 60px;
+}
+
+.section-cards-2__h3 {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 40px;
+}
+.section-cards-2__txt {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+.section-cards-2__link {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 30px;
+	&:hover {
+		color: $txt-deep-orange-500;
+		text-decoration: underline;
+		text-transform: 0.3s ease;
+	}
+}
+
+.section-content-wrap {
+	background-color: $bg-light-blue-100;
+	.section-content-wrap__txt {
+		color: $txt-black;
+		font-family: $graphicalFontName, sans-serif;
+		font-size: 30px;
+		font-weight: 400;
+		line-height: 40px;
+		margin-bottom: 23px;
+	}
+	.section-content-wrap__txt-2 {
+		color: $txt-black;
+		font-family: Roboto;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 25px;
+		margin-bottom: 5px;
+	}
+}
+
+.section-content-wrap-2 {
+	background-color: $bg-amber-300;
+}
+
+.section-content-wrapper {
+	padding-left: 70px;
+	border-left: $border-black;
+}
+
+.section-content-wrap-2__h3 {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: 35px;
+	text-align: center;
+	font-weight: 600;
+	line-height: 50px;
+}
+
+.section-content-wrap-2__block {
+	margin-right: 70px;
+}
+
+.section-work-tools__h2 {
+	color: $txt-black;
+	text-align: center;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: 65px;
+	font-weight: 600;
+	line-height: 75px;
+}
+.section-work-tools__txt {
+	color: $txt-black;
+	text-align: center;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: 25px;
+	font-weight: 400;
+	line-height: 30px;
+}
+
+.section-work-tools__btn {
+	max-width: toRem(200);
+}
+
+.section-deep-orange {
+	background-color: $bg-deep-orange-300;
+}
+
+.section-deep-orange__h2-wrap {
+	max-width: toRem(784);
+	width: 100%;
+}
+.section-deep-orange__h2 {
+	color: $txt-black;
+	text-align: center;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(65);
+	font-weight: 600;
+	line-height: toRem(75);
+}
+.section-deep-orange__txt {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(20);
+	font-weight: 400;
+}
+
+.footer-nav__wrap {
+	border-bottom: $border-black;
+}
+
+.footer-nav__h3 {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(40);
+	font-weight: 600;
+	line-height: toRem(50);
+}
+
+.footer-nav__txt {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(20);
+	font-weight: 400;
+	line-height: toRem(30);
+}
+
+.footer-nav__btn {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(20);
+	font-weight: 600;
+	line-height: toRem(30);
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.footer-nav__h6 {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(20);
+	font-weight: 600;
+	line-height: toRem(25);
+}
+
+.footer-nav__list a {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(15);
+	font-weight: 400;
+	line-height: toRem(15);
+	&:hover {
+		color: $txt-deep-orange-500;
+		text-transform: 0.3s ease;
+	}
+}
+
+.footer-bottom__lokalise-txt-wrap {
+	max-width: toRem(301);
+	width: 100%;
+}
+
+.footer-bottom__localise-icon {
+	margin-right: toRem(14);
+}
+
+.footer-bottom__lokalise-txt {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(12);
+	font-weight: 400;
+	line-height: toRem(15);
+}
+
+.footer-bottom__rights-reserved-txt {
+	color: $txt-black;
+	font-family: $graphicalFontName, sans-serif;
+	font-size: toRem(12);
+	font-weight: 400;
+	line-height: toRem(15);
+}

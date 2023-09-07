@@ -204,6 +204,10 @@ $path: '../assets/fonts/GraphikLCG';
 	width: 100%;
 }
 
+.article-wrap {
+	margin-top: toRem(90);
+}
+
 .article {
 	max-width: toRem(552);
 	&__h1 {
@@ -319,8 +323,13 @@ $path: '../assets/fonts/GraphikLCG';
 	}
 }
 
+.section-cards-wrap {
+	padding-top: 60px;
+}
+
 .section-cards {
 	background-color: $bg-amber-50;
+	padding: 60px 0;
 	&__h2 {
 		color: $txt-black;
 		text-align: center;
@@ -356,6 +365,10 @@ $path: '../assets/fonts/GraphikLCG';
 			text-decoration: underline;
 		}
 	}
+}
+
+.section-cards-2 {
+	padding: 60px 0;
 }
 
 .section-cards-2__h2 {
@@ -417,11 +430,14 @@ $path: '../assets/fonts/GraphikLCG';
 
 .section-content-wrap-2 {
 	background-color: $bg-amber-300;
+	padding-top: toRem(89);
+	padding-bottom: toRem(84);
 }
 
 .section-content-wrapper {
 	padding-left: 70px;
 	border-left: $border-black;
+	flex-wrap: wrap;
 }
 
 .section-content-wrap-2__h3 {

@@ -382,6 +382,10 @@ table {
   width: 100%;
 }
 
+.article-wrap {
+  margin-top: 5.625rem;
+}
+
 .article {
   max-width: 34.5rem;
 }
@@ -499,8 +503,13 @@ table {
   line-height: 30px;
 }
 
+.section-cards-wrap {
+  padding-top: 60px;
+}
+
 .section-cards {
   background-color: #fff8e4;
+  padding: 60px 0;
 }
 .section-cards__h2 {
   color: #000;
@@ -536,6 +545,10 @@ table {
 .section-cards__link:hover {
   color: #000;
   text-decoration: underline;
+}
+
+.section-cards-2 {
+  padding: 60px 0;
 }
 
 .section-cards-2__h2 {
@@ -598,11 +611,14 @@ table {
 
 .section-content-wrap-2 {
   background-color: #dabc98;
+  padding-top: 5.5625rem;
+  padding-bottom: 5.25rem;
 }
 
 .section-content-wrapper {
   padding-left: 70px;
   border-left: 1px solid rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
 }
 
 .section-content-wrap-2__h3 {

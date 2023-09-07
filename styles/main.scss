@@ -396,7 +396,7 @@ $path: '../assets/fonts/GraphikLCG';
 	font-family: $graphicalFontName, sans-serif;
 	font-size: 20px;
 	font-weight: 400;
-	line-height: 30px;
+	line-height: toRem(30);
 	&:hover {
 		color: $txt-deep-orange-500;
 		text-decoration: underline;
@@ -406,6 +406,8 @@ $path: '../assets/fonts/GraphikLCG';
 
 .section-content-wrap {
 	background-color: $bg-light-blue-100;
+	padding-top: toRem(53);
+	padding-bottom: toRem(53);
 	.section-content-wrap__txt {
 		color: $txt-black;
 		font-family: $graphicalFontName, sans-serif;

@@ -577,7 +577,7 @@ table {
   font-family: "Graphik LCG", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 1.875rem;
 }
 .section-cards-2__link:hover {
   color: #ff6336;
@@ -587,6 +587,8 @@ table {
 
 .section-content-wrap {
   background-color: #c9e8f2;
+  padding-top: 3.3125rem;
+  padding-bottom: 3.3125rem;
 }
 .section-content-wrap .section-content-wrap__txt {
   color: #000;

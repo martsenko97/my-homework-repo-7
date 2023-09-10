@@ -433,15 +433,19 @@ $path: '../assets/fonts/GraphikLCG';
 }
 
 .section-content-wrapper {
-	padding-left: 70px;
+	padding-left: toRem(70);
 	border-left: $border-black;
 	flex-wrap: wrap;
+}
+
+.section-content-wrap-2__h3-wraper {
+	max-width: toRem(534);
 }
 
 .section-content-wrap-2__h3 {
 	color: $txt-black;
 	font-family: $graphicalFontName, sans-serif;
-	font-size: 35px;
+	font-size: toRem(35);
 	text-align: center;
 	font-weight: 600;
 	line-height: 50px;
@@ -569,4 +573,19 @@ $path: '../assets/fonts/GraphikLCG';
 	font-size: toRem(12);
 	font-weight: 400;
 	line-height: toRem(15);
+}
+
+@media (max-width: 768px) {
+	.section-deep-orange__h2 {
+		font-size: toRem(45);
+	}
+
+	.section-deep-orange__txt {
+		font-size: toRem(18);
+	}
+
+	.btn.btn-black {
+		font-size: toRem(16);
+		padding: 10px 20px;
+	}
 }

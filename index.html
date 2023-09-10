@@ -21,34 +21,44 @@
 					>
 						<div class="container-wrapper">
 							<div class="container-wrap__logo flex flex flex-wrap">
-								<a href="#" class="img-logo-link img-fluid">
+								<a href="#" class="img-logo-link">
 									<img
 										src="./assets/svg-icons/lokalise.svg"
-										class="img-logo"
+										class="img-logo img-fluid"
 										alt="lokalise-icon"
 									/>
 								</a>
-
-								<div class="container__wrap-list flex flex-wrap">
-									<ul class="navbar-nav container__list flex flex-wrap">
-										<li class="nav-item">
-											<a href="" class="nav-link">Product</a>
-										</li>
-										<li class="nav-item">
-											<a href="" class="nav-link">Features</a>
-										</li>
-										<li class="nav-item">
-											<a href="" class="nav-link">Pricing</a>
-										</li>
-										<li class="nav-item">
-											<a href="" class="nav-link">Case studies</a>
-										</li>
-										<li class="nav-item">
-											<a href="" class="nav-link">Resources</a>
-										</li>
-									</ul>
-								</div>
+								<button
+									class="navbar-toggler mb-1"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#navbarNav"
+									aria-controls="navbarNav"
+									aria-expanded="false"
+									aria-label="Toggle navigation"
+								>
+									<span class="navbar-toggler-icon"></span>
+								</button>
 							</div>
+						</div>
+						<div class="collapse navbar-collapse" id="navbarNav">
+							<ul class="navbar-nav container__list flex flex-wrap">
+								<li class="nav-item">
+									<a href="" class="nav-link">Product</a>
+								</li>
+								<li class="nav-item">
+									<a href="" class="nav-link">Features</a>
+								</li>
+								<li class="nav-item">
+									<a href="" class="nav-link">Pricing</a>
+								</li>
+								<li class="nav-item">
+									<a href="" class="nav-link">Case studies</a>
+								</li>
+								<li class="nav-item">
+									<a href="" class="nav-link">Resources</a>
+								</li>
+							</ul>
 						</div>
 						<div class="buttons flex flex-wrap gap-2">
 							<button type="button" class="btn btn-white">Log in</button>
@@ -59,7 +69,7 @@
 			</header>
 			<main class="main">
 				<div class="container">
-					<div class="row container article-wrap">
+					<div class="row article-wrap">
 						<div class="col-md-6">
 							<div class="article flex flex-column flex-wrap">
 								<h1 class="article__h1">
@@ -495,13 +505,19 @@
 							<div
 								class="col-12 col-md-7 flex-md-row-reverse align-items-center d-flex"
 							>
-								<div class="d-flex align-items-center">
-									<div class="img-fluid">
-										<img src="./assets/images/cake.png" alt="cake" />
+								<div class="d-flex align-items-center flex-wrap">
+									<div class="section-content-wrap-2__img">
+										<img
+											class="img-fluid"
+											src="./assets/images/cake.png"
+											alt="cake"
+										/>
 									</div>
-									<h3 class="section-content-wrap-2__h3">
-										The most-loved translation management software
-									</h3>
+									<div class="section-content-wrap-2__h3-wraper">
+										<h3 class="section-content-wrap-2__h3">
+											The most-loved translation management software
+										</h3>
+									</div>
 								</div>
 							</div>
 							<div class="col-12 col-md-5 d-flex">
